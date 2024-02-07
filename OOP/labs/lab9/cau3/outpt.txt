@@ -1,0 +1,2 @@
+name: Nam, gpa: 7
+name: Nhan, gpa: 5

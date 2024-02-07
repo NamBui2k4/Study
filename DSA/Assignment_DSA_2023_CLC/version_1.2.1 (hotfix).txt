@@ -1,0 +1,14 @@
+Newest version:
+1.2.1 - 22/11/2023 (hotfix)
+- Update file movies.csv, remove the special character causing crash at line 629 when Scanner class is used.
+
+Older version:
+1.2 - 22/11/2023
+- Clarify the description of the Requirement 7.
+1.1 - 22/11/2023
+- Update class diagram of Rating class for matching with the topic description.
+- Remove "movie's title" in the constructor and toString() method of Movie class description.
+- Allow students to import java.io package: "... students have permission to utilize the classes in java.util package and the necessary classes for reading file tasks in the java.io package."
+- Update file Main.java, modify the numbers in the switch ... case ... statement for matching with the topic description.
+
+1.0 - 21/11/2023 - The first version.

@@ -1,0 +1,8 @@
+Apartment(*House_id, province_city, ward_district, number, area, floor_number) 
+House(*House_id, province_city, ward_district, number, area)
+Customer(*customer_id, full_name, work_place, address, phone_number)
+Contract(*contract_id, sign_date, contract_available, *customer_id)
+Branch(*branch_id, branch_name, *House_id)
+Vote(vote_date, score, assesst, *customer_id)
+Employee(employee_id, full_name, position, address, phone_number, *branch_id)
+House_Customer(*House_id, *customer_id)

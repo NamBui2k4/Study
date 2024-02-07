@@ -1,0 +1,3 @@
+DNS (Domain Name System) là giao thức được sử dụng để tìm kiếm địa chỉ IP của một tên miền trên mạng Internet. DNS giúp người dùng truy cập các trang web bằng tên miền thay vì phải nhập địa chỉ IP của trang web đó.
+
+Nguyên lý hoạt động: Khi người dùng nhập một tên miền vào trình duyệt, trình duyệt sẽ gửi yêu cầu đến máy chủDNS để tìm kiếm địa chỉ IP của tên miền đó. Máy chủ DNS sẽ trả về địa chỉ IP cho trình duyệt và trình duyệt sẽ kết

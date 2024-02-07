@@ -1,0 +1,54 @@
+# Outlier - Dữ liệu ngoại lai
+
+Outlier còn được gọi là dữ liệu ngoại lai – một thuật ngữ khá phổ biến trong lĩnh vực phân tích dữ liệu. Việc loại bỏ Outlier trong Dataset sẽ làm tăng độ chính xác cho kết quả phân tích của dữ liệu. Vậy Outlier là gì? Bài viết sau đây Mastering DA sẽ tổng hợp kiến thức về thuật ngữ Outlier cũng như cách xác định và loại bỏ Outlier trong MySQL một cách chuẩn nhất.
+
+__Outlier (dữ liệu ngoại lai) là gì?__
+
+Để hiểu rõ về bản chất của Outlier là gì, trước tiên bạn nên xem qua các hình tham khảo bên dưới và chú ý điểm khác biệt với các điểm còn lại trong hình.
+
+![](/pictures/khai-niem-cua-outlier-du-lieu-ngoai-lai-768x480-1.jpg)
+
+Có thể thấy, trong hình sẽ có một điểm khác biệt so với các điểm khác, người ta gọi đó là điểm bất thường hoặc điểm ngoại lai. Như vậy, dữ liệu ngoại lai (Outlier) là các giá trị dữ liệu đơn lẻ hoặc không tuân theo mô hình chung của tập dữ liệu. Giải thích một cách đơn giản thì Outlier là một hoặc nhiều cá thể có đặc điểm, giá trị khác hẳn so với các thành phần còn lại trong nhóm. Sự khác biệt này xuất hiện có thể do nhiều yếu tố khác nhau như giá trị hoặc thuộc tính.
+
+Ví dụ: Giả sử bạn đang nghiên cứu thu nhập của người dân trong một thành phố. Hầu hết người dân có thu nhập từ 20.000 đến 100.000 đô la mỗi năm, nhưng có một người có thu nhập lên tới 1 triệu đô la mỗi năm. Khi đó, người này được coi là một Outlier (Dữ liệu ngoại lai) vì thu nhập của họ vượt xa so với phân phối chung của tập dữ liệu.
+
+__Khi nào chúng ta cần loại bỏ Outlier?__
+
+Trên thực tế, khi chúng ta làm báo cáo hoặc xây dựng model, sẽ rất khó để đạt được giá trị tuyệt đối. Trong hầu hết các trường hợp, luôn tồn tại các dữ liệu xấu hoặc bất thường. Những dữ liệu này tồn tại do nhiều nguyên nhân khác nhau, phụ thuộc vào từng hoàn cảnh và mô hình kinh doanh.
+
+![](/pictures/khi-nao-loai-bo-outlier-768x480-1.jpg)
+\
+![](/pictures/Ví-dụ-về-Outliers-cho-dữ-liệu-1-chiều-Data-Fun.com_.png)
+\
+Một số trường hợp cần loại bỏ outlier là:
+
+- Khi Outlier là lỗi phát sinh trong quá trình đo lường, nhập liệu hoặc xử lý dữ liệu. Ví dụ: Một cân điện tử bị hỏng ghi nhầm trọng lượng của một vật là 1000 kg thay vì 10 kg. Hoặc đơn giản là dữ liệu dư hay thiếu vài số 0 hay sai địa chỉ
+|
+- Khi Outlier làm sai lệch phân bố của dữ liệu và ảnh hưởng đến các thống kê mô tả như trung bình, phương sai, phân vị,… Ví dụ: Một nhóm học sinh có điểm trung bình là 7, nhưng trong đó có 1 học sinh có điểm 10 và 1 học sinh có điểm là 0.
+|
+- Khi Outlier làm giảm hiệu quả của các phương pháp học máy như hồi quy tuyến tính, phân loại logistic, phân cụm k-means,… Ví dụ: Một tập dữ liệu về chiều cao và cân nặng của người, nhưng có một điểm dữ liệu là chiều cao 2m và cân nặng 40kg.
+|
+- Đối với các mô hình online, người ta có thể cố ý tạo ra giá trị ảo để test thị trường hoặc làm mồi nhử. Ví dụ một căn nhà có thể được ra bán với giá 100,000 đồng hay 999 tỷ. Nếu bạn tính trung bình giá nhà tại khu vực tính luôn cả nhà phía trên, đảm bảo giá nhà sẽ cao ngất ngưởng so với thực tế.
+|
+- Khi muốn biết tổng giá trị sản phẩm bán ra trong ngày của một cửa hàng, chúng ta phát hiện có một vài ngày, con số này cao một cách đột biến so với các ngày còn lại. Nguyên nhân là do gần đó có một sự kiện cộng đồng kiến khách hàng đột ngột tăng lên.
+
+Như vậy, Outlier có thể gây ảnh hưởng xấu đến kết quả phân tích và mô hình hóa dữ liệu, do đó cần được xác định và loại bỏ một cách hợp lý. Tuy nhiên, không phải lúc nào chúng ta cũng nên loại bỏ Outlier, bởi trong một số trường hợp Outlier sẽ mang đến những thông tin, giá trị và ý nghĩa quan trọng cho quá trình nghiên cứu.
+
+Vậy nên việc loại bỏ outlier hay không còn phụ thuộc vào nguyên nhân, ý nghĩa và tác động của Outlier đối với dữ liệu là gì. Chúng ta cần xem xét kỹ lưỡng trước khi đưa ra quyết định loại bỏ Outlier để không làm mất đi các thông tin quan trọng hoặc làm sai lệch kết quả phân tích và mô hình hóa dữ liệu.
+
+# 4 nhóm phương pháp chính để phát hiện Outliers 🔥🔥🔥
+
+Có rất nhiều phương pháp để có thể phát hiện được outliers, nhưng nhìn chung các phương pháp này sẽ được chia vào 4 nhóm lớn:
+
+- Nhóm dựa vào thống kê: Nhóm này dựa vào box plot hoặc các graph tương tự. Thường thì các điểm nằm ngoài vùng 1.5 lần interquartile có khả năng cao là outliers. Các điểm nằm ngoài vùng 3 lần interquartile được coi là các extreme outliers.
+
+- Nhóm dựa vào độ lân cận: Nhóm này dựa vào khoảng cách để xác định outliers. Thông thường thì KNN sẽ được sử dụng để chỉ ra các outliers dựa vào khoảng cách giữa chúng tới các điểm lân cận.
+
+- Nhóm dựa vào Time Series: Time Series làm tăng độ phức tạp do có xu hướng tổng quan của dữ liệu (trend effect) và xu hướng theo mùa hoặc tháng (seasonal effect). STL (Seasonal Trend Loses) Decomposition có thể được sử dụng để loại bỏ ảnh hưởng của các xu hướng này trước. Sau đó các kĩ thuật thống kê như là interquartile range (IQR) có thể được sử dụng để phát hiện outliers.
+
+- Nhóm dựa vào Machine Learning: 1 vài thuật toán Machine Learning như Isolation Forest có thể được dùng để phát hiện outliers.
+
+
+Nguồn: [_mastering-da.com_](https://mastering-da.com/outlier-la-gi/)
+
+[_facebook.com_](https://www.facebook.com/photo/?fbid=1008436243585517&set=gm.342163048563823&idorvanity=281424481304347)

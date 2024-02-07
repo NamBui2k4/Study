@@ -1,0 +1,40 @@
+bài toán
+tìm giá trị lớn nhất trong mảng a[] = [1,2,3,....]
+	điều kiện để giải:
+         1. xác định xem mảng có n ? phần tử
+	    2. nhập mảng đó vào chương trình con
+
+
+
+lưu ý khi đệ quy:
+   + Điểm dừng: Nếu mảng có 1 phần tử (tức là n = 1 ) --> trả về a[0] (ptu đầu tiên)
+
+
+code:
+
+int max(int arr[], int count)
+{ int max;
+if (count == 1)
+	{return arr[0];
+				}
+max = max(arr,count - 1)
+
+if (max > arr[count - 1] )
+	return max;
+else 
+	return arr[count -1 ];
+
+			}
+}
+
+khi thi chỉ cần viết hàm đệ quy, không cần viết hàm main
+
+nên vieert theo kiểu TDD - Test driven development
+
+
+
+kiem tra chuoi co doi xung hay không
+
+
+
+

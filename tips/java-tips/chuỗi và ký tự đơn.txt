@@ -1,0 +1,7 @@
+
+khai báo ký tự đơn:
+char[] c = {' ', 'n', 'g', 'u', 'y', 'e', 'n', ' ', 'v', 'a', 'n', ' ', 'a'};
+ khai báo một chuỗi:
+
+String str = "abcd";
+char[] charArray = str.toCharArray();
