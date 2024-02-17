@@ -1,0 +1,84 @@
+Hàm math.log()   logarit tự nhiên của một số đã cho. Nó được tính dựa trên hằng số e. Ví dụ:
+
+
+Hàm math.log10()  logarit cơ só 10 của số đã cho và được gọi là logarit tiêu chuẩn.
+
+Hàm math.exp()   Hàm này trả về một số dấu phẩy động sau khi nâng e lên số đã cho.
+
+Hàm math.log(x, a) logarit cơ số a của x
+
+Hàm math.sqrt()   căn bậc hai của bất kỳ số nào.
+
+
+Hàm math.expm1()   lũy thừa bậc e của bất kỳ số nào trừ đi 1. e là cơ sở của logarit tự nhiên.
+ 
+Hàm math.ceil()   làm tròn lên
+Hàm math.floor()  làm tròn xuống.
+Hàm math.fabs()   giá trị tuyệt đối của số được truyền vào
+
+
+Nếu bạn muốn biết vị trí cài đặt python, thì bạn có thể sử dụng lệnh where.exe trong cmd.exe hoặc PowerShell:
+
+   where.exe python
+
+hoặc vị trí file : where <tên file>
+
+lưu ý: khi dùng terminal trong vscode, không phải muốn là dùng cd C:\Users\Nam\AppData\Local\Programs\Python\Python311 để tìm đường dẫn của python để chạy file mà phải mở folder mới theo đường dẫn này, vì terminal thực hiện lệnh cd trong folder cũ, nếu không có đường dẫn trong folder cũ thì nó ko tìm dc => lôi
+
+các hàm: 
+   with <câu lệnh> as <biến>  ~ <biến> = <câu lệnh>
+
+
+lỗi cú pháp:
+   + IndentationError: unexpected indent --> Đây là lỗi do thụt lề sai, được coi như là một dạng lỗi cú pháp. Nên nhớ là Python là một ngôn ngữ mà việc xác định khối mã (block code) phụ thuộc vào thụt lề.
+   + no such files in directory --> không nên đặt tên file python có dấu cách
+   + type NoneType doesn't define __round__ method  --> lỗi khi dùng hàm def do không có giá trị trả về, nên sử dụng return <tham số/ hàm nhưng kết quả phải là hằng số> 
+
+
+   + 'float' object cannot be interpreted as an integer --> lỗi khi sử dụng hàm range sai mục đích vì không có chức năng hỗ trợ số thực hoặc số không phải số nguyên trong hàm
+   + ValueError: math domain error  --> lỗi miền toán học, do nhập vào giá trị làm cho hàm không xác định
+list()
+   + Cannot convert expression to float : lỗi kiểu dữ liệu khi dùng sympy
+        trong lập trình, kiểu dữ liệu rất quan trọng
+
+
+lưu ý, trong lập trình, kiểu dữ liệu rất quan trọng
+   thư viện sympy có tất cả các hàm của thư viện math, numpy nên khi dùng sympy nên ưu tiên các hàm của sympy như sp.sqrt , sp.e , sp.limit,
+    vì math chỉ ưu tiên kiểu dữ liệu số thực trong khi sympy vừa ưu tiên kiểu thực vừa ưu tiên đa thức
+
+python 2: / là chia nguyên còn // là chia thực
+python 3: / là chia thực và ngược lại =))
+
+và lưu ý:  .subs chỉ dùng khi thực hiện với hàm sympy
+với hàm lambda thì f(thay số vào)
+
+
+chú thích các dòng không cần thiết: ctrl /
+
+python -m pip install
+python -m pip install numpy
+python -m pip install matplotlib
+python -m pip install sympy
+
+Nhập vào 1 số thực:
+x = float(input())
+
+In ra một số thực với 4 chữ số thập phân:
+print('%.4f'%(x))
+
+
+
+len(mảng) : kích thước của mảng
+
+limit_seq : giống với sp.limit 
+ tính giai thừa: sp.factorial
+
+Fraction(j, i) là một phương thức tạo ra một đối 
+tượng phân số với tử số là j và mẫu số là i
+
+in ra màn hình: 
+print(f"{fraction.numerator}/{fraction.denominator}")
+
+fraction.denominator: mẫu số
+fraction.numerator: tử số
+
