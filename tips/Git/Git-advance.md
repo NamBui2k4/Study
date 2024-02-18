@@ -70,7 +70,7 @@ Mục đích của các lệnh này là thiết lập tương tác giữa remote
 
 ![](/pictures/cafedev-git-push-1.png)
 
-## 8.1 Lệnh ``git pull``
+### 8.1 Lệnh ``git pull``
 
 Tác dụng: tải xuống (fetch) và kết hợp (merge) dữ liệu từ remote vào local  của bạn..
 
@@ -92,7 +92,7 @@ Lệnh `git pull` rất hữu ích trong một dự án có nhiều dev cùng th
 
 _Lưu ý rằng trong quá trình sử dụng lệnh `git pull`, bạn cần đảm bảo có kết nối mạng và có quyền truy cập vào kho chứa từ xa. Bạn cũng nên kiểm tra và giải quyết xung đột (nếu có) để đảm bảo rằng dự án của bạn không gặp vấn đề sau khi cập nhật._
 
-## 9. lệnh đẩy lên remote:  `git push`
+### 8.2 lệnh đẩy lên remote:  `git push`
 
 Ok, vậy là chúng ta sẽ bước qua một kiến thức được cho là khó nhất nhưng cũng quan trọng nhất về Git nhé '-'
 
@@ -102,9 +102,11 @@ Thuật ngữ push đề cập đến việc tải nội dung kho lưu trữ c�
 
 Trước khi tìm hiểu `git push`, ta cần hiểu rõ một số khái niệm sau:
 
-### Các trạng thái của một file trong Git
+#### Các trạng thái của một file trong Git
 
-Trong tiến trình làm việc của Git, một file source code luôn tồn tại ở một trong 3 trạng thái:
+Trong tiến trình làm việc của Git, một file source code luôn tồn tại ở một trong 4 trạng thái:
+
+- Untracked (chưa theo dõi): mới lần đầu xuất hiện ở dự án nhưng chưa được thêm vào Staging area
 
 - Modified (đã chỉnh sửa): đã được sửa đổi trong Working Directory, nhưng chưa được thêm vào Staging Area.
 
@@ -116,7 +118,7 @@ Những trạng thái này sẽ quyết định xem trong tiến trình làm vi�
 
 _Tiến trình làm việc của Git:_
 
-_1. Bạn sửa file trong Working Directory (Modified)._
+_1. Bạn sửa file trong Working Directory (Modified). Hoặc là bạn thêm một file mới vào đó (Untracked)_
 _2. Sau đó, bạn sử dụng lệnh `git add` để đưa những thay đổi đó vào Staging Area (Added)._
 _3. Cuối cùng, bạn sử dụng lệnh `git commit` để tạo một commit và lưu trữ các thay đổi đó trong  (Committed)._
 

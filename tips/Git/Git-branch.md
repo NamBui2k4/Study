@@ -28,7 +28,7 @@ Nói chung, việc tạo branch sẽ giúp bạn phân chia và quản lý công
 
 Nếu là lần đầu tiên sử dụng Git cho dự án thì sau khi tạo repository, bạn phải thực hiện hai thao tác:
 
-- Thêm một file/ folder nào đó vào repo: `git adđ`
+- Thêm một file/ folder nào đó vào staged: `git adđ`
 - thêm commit lên branch main: `git commit`
 
 thì lúc này mới có branch `main` để làm việc. Nếu không có 2 thao tác trên trong lần đầu tiên, việc tạo branch sẽ gây ra lỗi `fatal: not a valid object name: 'main'`
@@ -82,8 +82,6 @@ $ git branch
 Kết quả trên cho ta thấy, bạn đang ở branch `main`. Muốn chuyển đổi qua `Laptrinh` thì chỉ cần gõ `git switch Laptrinh`. Nếu `Laptrinh` không có sẵn, thì thêm option `-c` vào.
 
 
-
-
 ## Xóa branch
 
 Xuyên xuốt quá trình của dự án thì sẽ có rất nhiều branch không cần thiết được tạo ra, việc lưu trữ các branch đó có thể gây rối trong quá trình quản lý git. Vậy nên, sau khi đã merge code thành công vào main thì chúng ta nên xoá các nhánh đó đi.
@@ -126,6 +124,21 @@ To https://github.com/PhuongNam2k4/MyProject
 
 ```
 \
+_Chú ý: không thể xóa branch được thiết lập mặc định (default) trên remote. Nó sẽ quăng ra lỗi `! [remote rejected] main (refusing to delete the current branch)`_
+
+Ví dụ: 
+
+Github của tôi là `https://github.com/PhuongNam2k4/Git`. Giả sử nhánh `main` là branch mặc định thì nếu tôi cố xóa nó thì sẽ có lỗi:
+
+```
+bui@bui-nam:~/Documents/MyProject/tips/Git$ git push origin --delete main
+To https://github.com/PhuongNam2k4/Git
+ ! [remote rejected] main (refusing to delete the current branch: refs/heads/main)
+error: failed to push some refs to 'https://github.com/PhuongNam2k4/Git'
+```
+
+Hãy thiết lập chế độ mặc định cho branch khác trước khi xóa
+
 Bên cạnh đó, thường thì các dev sẽ clone remote về local để việc xóa dễ hơn vì chỉ cần thay thế `[tên remote]` bằng `origin` là đủ. Nếu bạn chưa biết clone và origin là gì thì có thể kham khảo tại [Git-clone](/Git-clone.md).
     
     git push origin --delete [tên nhánh]
@@ -135,6 +148,52 @@ Cách này sẽ tiện hơn rất nhiều vì các dev sẽ không cần phải 
 Hoặc có thể dùng câu lệnh ngắn gọn hơn:
 
     git push origin :fix/authentication
+
+## Rename branch 
+
+Khi làm việc với Git, đôi khi bạn đặt tên branch không hay nhưn muốn dự án được gọn gàng hơn. Vấn đề này kha đơn giản xử lý, vì vậy hãy xem chúng ta làm thế nào để rename branch git trên cả local và remote Git nhé. 
+
+## Cách Rename Branch Git trên máy local
+Trước khi bắt đầu, hãy đảm bảo bạn đã chọn branch bạn muốn rename:
+
+    git checkout old-name
+
+Nếu bạn muốn xem danh sách local branchs, nhập lệnh sau:
+
+    git branch --list
+
+Khi đã xong, làm theo các bước sau:
+
+Sử dụng lệnh rename branch Git với option -m:
+    
+    git branch -m new-name
+
+Bạn có thể đổi tên local branch từ một branch khác bằng lệnh sau:
+
+    git checkout master
+    git branch -m old-name new-name
+Cuối cùng, lệnh sau sẽ liệt kê tất cả – local và remote – branch để xác nhận tên đã được đổi:
+
+    git branch -a
+## Cách rename branch git từ xa
+
+Thực chất, git không cho phép đổi trên trực tiếp remote branch mà là gián tiếp đi qua 3 bước: xóa đi > pull lên > đặt tên mới:
+
+1. Để bắt đầu, bạn cần rename local branch bằng các bước trước.
+
+2-3. Sau đó xóa branch cũ branch rồi push branch mới lên. Bạn làm vậy bằng lệnh:
+
+        git push origin --delete old-name
+
+        git push origin old-name new-name
+
+Cài lại upstream branch cho tên local branch mới là xong:
+
+    git push origin -u new-nam
+
+Tuy nhiên, chính vì phải xóa đi tạo lại branch nên sẽ có một số trường hợp không thể đổi tên. Chẳng hạn không thể đổi tên branch mặc định vì bạn không thể xóa nó. 
+
+Nguồn: [hostinger.vn](https://www.hostinger.vn/huong-dan/cach-rename-branch-git)
 
 Nguồn: [freetuts.net](https://freetuts.net/git-branch-la-gi-branch-main-1072.html)
 
