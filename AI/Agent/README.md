@@ -102,10 +102,10 @@ Mọi kiến thức của tác tử được tự thu nạp bởi chính tác t�
 # Tác tử hợp lý (rational Agent)
 
     Tác tử hợp lý (Rational Agent) bao gồm một tập 
-    hợp các tùy chọn riêng biệt. Các mô hình cho 
-    phép chúng đối phó với các biến số bất ngờ và 
-    luôn chọn kết quả tốt nhất có thể từ tất cả các 
-    tùy chọn có sẵn
+    hợp các tùy chọn ( gọi là effectors) riêng 
+    biệt. Các mô hình cho phép chúng đối phó với 
+    các biến số bất ngờ và  luôn chọn kết quả tốt 
+    nhất có thể từ tất cả các effectors có sẵn
 \
 Thực tế, thuật ngữ “Rational Agent” không chỉ áp dụng riêng cho một hệ thống, mà thuật ngữ cũng dùng để đề cập đến một người, một công ty, hay một ứng dụng, hay bất cứ thứ gì hoặc bất kỳ ai đưa ra quyết định hợp lý.
 
@@ -121,7 +121,9 @@ Về cơ bản, một Rational Agent là một tác tử hoạt động dựa tr
 
 ![](/pictures/rational-agent(2).png)
 
-Sensor có thể là máy ảnh, thiết bị hồng ngoại, sonar, siêu âm hoặc radar… những thiết bị giúp robot AI xác định kích thước của vật thể hoặc môi trường xung quanh, xác định vật thể và xác định khoảng cách. Trong khi đó, effector là bất kỳ thiết bị nào ảnh hưởng đến một môi trường cụ thể, có thể là chân, bánh xe, cánh tay, ngón tay, cánh… của robot. Effectors còn được gọi với cái tên khác là bộ truyền động.
+Sensor có thể là máy ảnh, thiết bị hồng ngoại, sonar, siêu âm hoặc radar… những thiết bị giúp robot AI xác định kích thước của vật thể hoặc môi trường xung quanh, xác định vật thể và xác định khoảng cách. 
+
+Trong khi đó, effector là bất kỳ thiết bị nào ảnh hưởng đến một môi trường cụ thể (tức là hành động), có thể là chân, bánh xe, cánh tay, ngón tay, cánh… của robot. Effectors còn được gọi với cái tên khác là bộ truyền động.
 
 ## Điều gì làm cho Rational Agent hiệu quả?
 
@@ -135,6 +137,7 @@ Ví dụ, một chiếc ô tô tự lái sẽ hợp lý nếu nó có thể đư
 
 Xe tự hành có các sensor bao gồm máy ảnh, sonar, thiết bị định vị toàn cầu (GPS), đồng hồ tốc độ, đồng hồ đo quãng đường, gia tốc kế và bàn phím. Chúng cũng có các bộ truyền động (effector) bao gồm vô lăng, chân ga, phanh, tín hiệu và còi.
 
+Một rational agent có thể trở thành intelligence agen nếu như nó chọn ra được một effector tốt nhất để tối đa hóa hiệu suất trong quá trình làm việc
 ## Phân loại tác tử
 
 - Tác tử phản xạ đơn giản (Simple Reflex Agents)
