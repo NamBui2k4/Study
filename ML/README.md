@@ -7,7 +7,7 @@ Có thể giải thích mối liên hệ giữa 3 khái niệm này bằng cách
 - Machine learning - khái niệm xuất hiện sau,
 - Deep learning - thứ đang thúc đẩy sự bùng phát của AI hiện nay,là vòng tròn nhỏ nhất.
 
-![](/pictures/phan-biet-ai-mc-dl2.jpg)
+![](https://st.quantrimang.com/photos/image/2018/08/30/phan-biet-ai-mc-dl2.jpg)
 
 ## Học máy là gì?
 Học máy (machine learning) là khả năng của chương trình máy tính sử dụng kinh nghiệm, quan sát, hoặc dữ liệu trong quá khứ để cải thiện công việc của mình trong tương lai thay vì chỉ thực hiện theo đúng các quy tắc đã được lập trình sẵn. Chẳng hạn, máy tính có thể học cách dự đoán dựa trên các ví dụ, hay học cách tạo ra các hành vi phù hợp dựa trên quan sát trong quá khứ.
