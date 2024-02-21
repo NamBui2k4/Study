@@ -3,10 +3,10 @@
 Toán rời rạc là nền tảng của thuật toán và  khoa học máy tính, lý thuyết thông tin, mã hóa, logic toán học, đồ thị, thuật toán và nhiều lĩnh vực khác. Một trong những kiến thức quan trọng nhất của toán rời rạc là tính logic mệnh đề, vì nó cung cấp cơ sở lý luận cho các khái niệm, định nghĩa, định lý và chứng minh.
 
 ## Định nghĩa
-    Mệnh đề (statement / proposition) là một câu 
-    khẳng định có giá trị chân lý xác định đúng 
-    (True) hoặc sai (False). Nhưng không được phép 
-    bằng cả hai
+    Mệnh đề (statement / proposition) là 
+    một câu khẳng định có giá trị chân lý 
+    xác định đúng (True) hoặc sai 
+    (False). Nhưng không được phép bằng cả hai
 \
 Ví dụ:
 
@@ -26,7 +26,7 @@ Lưu ý: một mệnh đề phải là một câu khẳng định có ý nghĩa.
 
 Một mệnh đề có thể được tạo bởi nhiều mệnh đề đơn lẻ kết nối bằng các liên từ như “và”, “hay”, “nếu…thì”, "suy ra". Mệnh đề như vậy được gọi là mệnh đề phức hợp (compound statement)
 
-Ví dụ: "nếu tôi ra ngoài, thì trời mưa". Đây là một mệnh đề phức hợp được tạo bởi 2 mệnh đề đơn:
+Ví dụ: `nếu tôi ra ngoài, thì trời mưa`. Đây là một mệnh đề phức hợp được tạo bởi 2 mệnh đề đơn:
 - `tôi ra ngoài`
 -  `trời mưa`
 
