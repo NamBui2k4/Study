@@ -87,6 +87,8 @@ Trong đó bạn cần chú ý đến thư mục objects vì đây là thư mụ
 
 Nếu bạn đã từng tìm hiểu qua Linux thì sẽ thấy cách lưu trữ của Git gần giống như Linux bởi vì tiền thân Git được tạo ra là sử dụng trên Linux. Mỗi object sẽ được định danh bởi một Unique Id có chiều dài là 40 kí tự dựa vào thuật toán băm SHA-1. Ví dụ: 73b41f9f027614a0417edc7cca83ea5065eb36
 
+¬
+
 ### 3. lệnh thêm: `git add`
 
 Tác dụng : Thêm thay đổi của Working directory vào staging area.

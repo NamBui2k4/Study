@@ -122,13 +122,29 @@ _1. Bạn sửa file trong Working Directory (Modified). Hoặc là bạn thêm 
 _2. Sau đó, bạn sử dụng lệnh `git add` để đưa những thay đổi đó vào Staging Area (Added)._
 _3. Cuối cùng, bạn sử dụng lệnh `git commit` để tạo một commit và lưu trữ các thay đổi đó trong  (Committed)._
 
+Như vậy, chỉ cần hoàn thành 3 trước trên là có thể push được rồi :v
+
+Cú pháp lệnh push:
+
+    git push origin <tên branch>
 
 
 Lưu ý, 
 
-trước khi push thì hãy commit nhé, không thì git sẽ báo lỗi "error: src refspec main does not match any"
+- trước khi push thì hãy commit nhé, không thì git sẽ báo lỗi "error: src refspec main does not match any"
 
-Push có khả năng ghi đè các thay đổi; cần thận trọng khi push.
+- Push có khả năng ghi đè các thay đổi; cần thận trọng khi push.
+
+- Trong trường hợp bạn vừa tạo mới một branch và push nó lên git, có thể bạn sẽ gặp phải lỗi này:
+
+      fatal: The current branch my-new-branch has 
+      no upstream branch.
+      To push the current branch and set the remote 
+      as upstream, use
+
+Lúc này chỉ cần bổ sung tham số `--set-upstream` là được
+
+    git push --set-upstream origin <tên branch>
 
 
 

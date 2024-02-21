@@ -1,0 +1,10 @@
+[package]
+edition = "2021"
+name = "space-age"
+version = "1.2.0"
+
+[features]
+grapheme = []
+
+[dependencies]
+grapheme = "0.0.0"

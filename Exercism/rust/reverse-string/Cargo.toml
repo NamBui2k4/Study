@@ -1,0 +1,14 @@
+[dependencies]
+grapheme = "0.0.0"
+time = "0.3.23"
+
+[features]
+grapheme = []
+
+
+
+[package]
+edition = "2021"
+name = "reverse_string"
+version = "1.2.0"
+
