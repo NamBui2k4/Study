@@ -14,8 +14,7 @@ Thuộc tính margin với một giá trị
 
 VD: CSS cho thẻ div cách đều 4 phía 30px.
 
-html
-copy
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -35,6 +34,7 @@ copy
     <div>Toidicode.Com</div>
 </body>
 </html>
+```
 Xem Kết Quả
 
 Thuộc tính margin với hai thuộc tính
@@ -53,6 +53,7 @@ VD: CSS cho thẻ div cách trên dưới 20px, trái phải 30px.
 
 html
 copy
+```
 <!DOCTYPE html>
 <html>
 <head>
@@ -72,6 +73,7 @@ copy
     <div>Toidicode.Com</div>
 </body>
 </html>
+```
 Xem Kết Quả
 
 Thuộc tính margin với ba giá trị

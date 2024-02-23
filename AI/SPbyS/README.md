@@ -1,6 +1,7 @@
 # An Introduction to Problem-Solving using Search Algorithms for Beginners
 
 ## Overview
+
 In computer science, problem-solving refers to artificial intelligence techniques, including various techniques such as forming efficient algorithms, heuristics, and performing root cause analysis to find desirable solutions.
 
 The basic crux of artificial intelligence is to solve problems just like humans.
