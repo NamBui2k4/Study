@@ -68,4 +68,6 @@ Based on the search problems, we can classify the search algorithm as
 - Uninformed search (US)
 - Informed search (IS)
 
+![](https://media.geeksforgeeks.org/wp-content/uploads/AI-algos-1-e1547043543151.png)
+
 Source: [analyticsvidhya.com](https://www.analyticsvidhya.com/blog/2021/10/an-introduction-to-problem-solving-using-search-algorithms-for-beginners/)

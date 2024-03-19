@@ -1,0 +1,328 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Papyrus";
+    overflow-x: hidden;
+}
+
+/* title */
+.title{
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    font-size: 20px;
+    margin-bottom: 80px;
+}
+/* box */
+.box {
+    margin-top: 21px;
+    border: 1px solid #ccc;
+    width: 60%;
+    padding: 20px;
+    height: 340px;
+    margin-bottom: 40px;
+    overflow: hidden;
+ }
+ 
+
+section ol p{
+    margin-left: 5px;
+    padding-left: 10px;
+}
+.box h2 {
+    font-size: 18px;
+    font-weight: bold;
+    padding-left: 1px;
+}
+ 
+ .box ol {
+    list-style-type: decimal;
+    padding: 20px;
+ }
+ 
+ .box li {
+    font-size: 14px;
+    color: white;
+    margin-bottom: 5px;
+    
+ }
+
+/* logo */
+.logo{
+    width: 80px;
+    margin-left: 1px;
+    
+}
+
+.navbar .left-logo{
+    width: 100px;
+    position: relative;
+    margin-right: 1100px;
+    margin-top: 100px;
+}
+
+.navbar .right-logo{
+    width: 100px;
+    position: relative;
+    margin-left: 1100px;
+    margin-bottom: 100px;
+    display: inline-block;
+    
+}
+
+.dragon{
+    width: 45%;
+    height: 30%;
+}
+/* Body */
+body{
+    background-color: black;
+    background-image: url('https://w0.peakpx.com/wallpaper/853/286/HD-wallpaper-train-your-dragon-2-how-to-train-your-dragon-anime-movie.jpg');
+    height: 100vh;
+    background-size: cover;
+    background-repeat: repeat;
+    background-size: cover;
+    overflow: auto;
+    font-weight:  bold;
+    background-position: center;
+}
+
+/* Intro */
+.Intro{
+    width: 80%;
+}
+
+
+.main{
+    background-color: rgb(8, 60, 51);
+    border: 2px solid black ;
+    color: burlywood;
+    width: 90%;
+    position: relative;
+    left: 60px;
+    padding: 30px;
+    height: max-content;
+    margin: 0;
+    margin-top: 80px;
+}
+
+
+a:hover{ 
+    color: whitesmoke;
+    scale: 1.2;
+}
+a:active{
+    scale: 1.05;
+}
+header{ position: relative; padding: 0;}
+
+/* DROPDOWN MENU */
+.dropdown_menu{
+    display: none;
+    position: absolute;
+    right: 4rem;
+    top: 60px;
+    height: 0;
+    width: 300px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(15px);
+    overflow: hidden;
+    border-radius: 10px;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown_menu.open{
+    height: 240px;    
+}
+
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* navbar */
+.navbar{
+    width: 95%;
+    height: 150px;
+    margin: 0  auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    overflow: hidden;
+}
+
+
+.navbar .link{
+    display: flex;
+    gap: 4rem;
+    width: 60%;
+    font-size: 2rem;
+}
+
+.navbar .toggle_btn{
+    color: #eaf2f8;
+    font-size:  2rem;
+    cursor: pointer;
+    position: relative;
+    left: 10px;
+    top: 1px;
+    padding: 10px;
+    display: none;
+}
+
+/* Home About Service Contact */
+header ul a{
+    text-align: center;
+    display: flex;
+    color: black;
+    font-size: large;
+    background-color: orange;
+    padding: 10px;
+    border-radius: 50%;
+    float: center;
+    border: 3px solid black;
+}
+
+header ul{
+    margin-right: 100px;
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 882px){
+    .navbar .link,
+
+    .navbar ul{
+        display: none;
+    }
+    .navbar .toggle_btn{
+        display: flex;
+    }
+    .dropdown_menu{
+        display: flex;
+    }
+
+    main img{
+        display: none;
+    }
+
+}
+
+@media(max-width: 576px){
+    .dropdown_menu{
+        left:2rem;
+        width: unset;
+    }
+}
+
+section#hero{
+    height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    color: #ccc;
+}
+
+/* content of each dragon */
+main img{
+    padding: 2px;
+    align-items: center;
+    margin: 20px;
+    border: 3px solid black;
+    
+}
+
+div blockquote{
+    letter-spacing: 2px;
+    width: 400px;
+    font-style: italic; /* Kiểu chữ nghiêng */
+    margin-right: 20px;
+    margin-bottom: 20px; /* Khoảng cách giữa các đoạn trích dẫn */
+    margin-left: 40px;
+}
+
+/* border left */
+.border_left{
+    border-left: 1px solid burlywood; /* Màu và độ dày của đường viền bên trái */
+    padding-left: 10px; /* Khoảng cách giữa đường viền và nội dung */
+    margin-left: 10px;
+}
+.border_right{
+    border-right: 1px solid burlywood; 
+    padding-right: 10px; /* Khoảng cách giữa đường viền và nội dung */
+    margin-right: 10px;
+}
+
+cite {
+    display: block; /* Hiển thị nguồn trích dẫn trên một dòng mới */
+    font-style: normal; /* Trả về kiểu chữ bình thường cho nguồn trích dẫn */
+    margin-top: 10px; /* Khoảng cách giữa trích dẫn và nội dung tiếp theo */
+    color: burlywood; /* Màu chữ của nguồn trích dẫn */
+    margin-left: 180px;
+    font-style: italic;
+    font-size: 120%;
+  }
+
+.quote_img{
+    display: flex;
+    align-items: center; /* Căn chỉnh theo đỉnh */
+}
+
+/* SHOW_MORE BUTTON */
+.showmore_btn{
+    border: 1px solid black;
+    background-color: orange;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: large;
+    font-weight: bold;
+    position: relative;
+    left: 50%;
+    top: 99%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transform: translate(-50%, -50%);
+}   
+
+.showmore_btn:hover{
+    scale: 1.05 ;
+    color: #ccc;
+}
+
+/* footer */
+.footerContainer{
+    display: flex;
+    justify-content: center;
+}   
+
+.footerContainer .socialIcon {
+    flex: 1 1 100px;
+    margin: 10px;
+}
+
+.socialIcon{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    padding: 50px;
+    position: relative;
+    right: 10px;
+    width: 120%;
+    height: 120%;
+    gap: 2rem;
+    border-radius: 50%;
+}
+
+
+footer a{
+    background-color: #ccc;
+    border: 2px solid black;
+    height: 120%;
+    border-radius: 50%;
+}

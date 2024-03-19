@@ -1,0 +1,13 @@
+import pandas as pd
+
+df = pd.read_csv('abalone.data')
+
+columns = df.columns
+types = df.dtypes
+
+from sklearn.preprocessing import LabelEncoder 
+le = LabelEncoder()
+for i in range(len(types)):
+  if types[i]=='object':
+    le.fit_transform(df[columns[i]])
+    df[columns[i]] = le.transform(df[columns[i]])

@@ -12,7 +12,7 @@ Khai báo CSS luôn kết thúc bằng dấu chấm phẩy, khối khai báo n�
 
 Ví dụ:
 
-```
+```css
 p {
     color: red;
     text-align: center;
@@ -52,7 +52,7 @@ Ví dụ: Thiết lập đoạn văn có màu đỏ, chúng ta có thể thiết
 
 Ví dụ 2: Thiết lập font-size: 18px và color: orange cho thẻ tiêu đề h1.
 
-```
+```html
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -85,14 +85,14 @@ css/main.css
 ```
 
 File main.css:
-```
+```css
 p{
     color: #f15c25;
 }
 ```
 Nội dung file index.html
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>

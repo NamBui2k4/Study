@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Student Management</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<style>
+    .container{
+        max-width: 600px;
+    }
+</style>
+
+<div class="container">
+    <h3 class="mt-5 mb-3">Student Management</h3>
+    <form>
+
+        <div class="form-group">
+            <label for="firstname">First name:</label>
+            <input type="text" class="form-control" id="firstname" placeholder="Enter first name" name="firstname">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Last name:</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Enter last name" name="lastname">
+        </div>
+
+        <div class="form-group ">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+        </div>
+        <button class="btn btn-success px-5 mr-1" type="button" class="btn btn-default">Add</button>
+        <button class="btn btn-outline-primary px-5" type="button" class="btn btn-default">Reset</button>
+    </form>
+
+    <br>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th>Delete</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>john@example.com</td>
+            <td><button class="btn btn-danger btn-sm">Delete</button></td>
+        </tr>
+        <tr>
+            <td>Mary</td>
+            <td>Moe</td>
+            <td>mary@example.com</td>
+            <td><button class="btn btn-danger btn-sm">Delete</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<script>
+    // Get the table element
+var table = document.getElementById('studentTable');
+
+// Function to add a new student to the table
+function addStudent() {
+  // Get the input values
+  var firstName = document.getElementById('firstNameInput').value;
+  var lastName = document.getElementById('lastNameInput').value;
+  var email = document.getElementById('emailInput').value;
+
+  // Check if any field is blank
+  if (firstName === '' || lastName === '' || email === '') {
+    alert('Please fill in all fields');
+    return;
+  }
+
+  // Create a new row for the student
+  var row = table.insertRow(-1);
+
+  // Insert the student data into the row
+  var firstNameCell = row.insertCell(0);
+  firstNameCell.textContent = firstName;
+
+  var lastNameCell = row.insertCell(1);
+  lastNameCell.textContent = lastName;
+
+  var emailCell = row.insertCell(2);
+  emailCell.textContent = email;
+
+  // Add a delete button to the row
+  var deleteCell = row.insertCell(3);
+  var deleteButton = document.createElement('button');
+  deleteButton.textContent = 'Delete';
+  deleteButton.addEventListener('click', function() {
+    // Remove the corresponding row when the delete button is clicked
+    table.deleteRow(row.rowIndex);
+  });
+  deleteCell.appendChild(deleteButton);
+
+  // Reset the input fields
+  document.getElementById('firstNameInput').value = '';
+  document.getElementById('lastNameInput').value = '';
+  document.getElementById('emailInput').value = '';
+}
+</script>
+
+</body>
+</html>
