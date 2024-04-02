@@ -42,6 +42,18 @@ body{
     background: var(--bg);
 }
 
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: #fff; 
+    background: var(--main-color);
+    cursor: pointer;
+}
+.btn:hover{
+    letter-spacing: .2rem ;
+}
 .header
 {
     background: var(--bg);
@@ -72,14 +84,14 @@ body{
     padding-bottom: .5rem;
 }
 
-.header .icon div{
+.header .icons div{
     color: #fff;
     cursor: pointer;
     font-size: 2.5rem;
     margin-left: 2rem;
 }
 
-.header .icon div:hover{
+.header .icons div:hover{
     color: var(--main-color);
 }
 
@@ -117,4 +129,103 @@ body{
 
 .header .search-form label:hover{
     color: var(--main-color);
+}
+
+.image{
+    height: 130px;
+}
+.header .cart-item-container{
+    position: absolute;
+    top: 100%; right: -100%;
+    height: calc(100vh - 9.5rem);
+    width: 38rem;
+    background: #fff;
+    padding: 0 1.5rem
+}
+
+.header .cart-item-container .cart-item{
+    position: relative;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem
+}
+
+.header .cart-item-container .cart-item .fa-times{
+    position: absolute;
+    top: 1rem; right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--black);
+}
+
+.header .cart-item-container .cart-item .fa-times:hover{
+    color: var(--main-color);
+}
+
+.header .cart-item-container .cart-item img{
+    height: 7rem;
+}
+
+.header .cart-item-container .content h3{
+    font-size: 2rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+}
+
+.header .cart-item-container .content .price{
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+.header .cart-item-container .btn{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*  media queries */
+
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    .header{
+        padding: 1.5rem 2rem;
+
+    }
+}
+
+
+@media (max-width: 991px){
+    #menu-btn{
+        display: inline-block;
+    }
+    .header .navbar{
+        position: absolute;
+        top: 100%; right: -100%;
+        background: #fff;
+        width: 30rem;
+        height: calc(100vh - 9.5rem);
+    }
+    .header .navbar .active{
+        right: 0;
+    }
+    
+    .header .navbar a {
+        color: var(--black);
+        display: block;
+        margin: 1.5rem;
+        padding: .5rem;
+        font-size: 2rem;
+    }
 }
