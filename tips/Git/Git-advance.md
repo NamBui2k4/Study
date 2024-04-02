@@ -38,7 +38,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 Bạn có thể thấy, Git quăng ra thông báo `modified:   tips/Git (modified content)`, nghĩa là một file nào đó ở `tips/Git` đã được chỉnh sửa nhưng chưa được đưa vào staging area cũng như chưa commit. 
 
-Lúc này bạn sẽ add những thay đổi đó, với câu lệnh muốn thở: `git add tips/Git`. Tuy nhiên, git sẽ không thông báo gì cả, tưởng chừng đã thành công nhưng khi kiểm tra lần nữa thì... Bùm ! Không có gì thay đổi ! Thế là coi như add thất bại ! 
+Lúc này bạn sẽ add những thay đổi đó, với câu lệnh muốn thở: `git add tips/Git`. Tuy nhiên, git sẽ không thông báo gì cả, tưởng chừng đã thành công nhưng khi kiểm tra lần nữa thì... Bùm ! Không có gì thay đổi ! Lỗi vẫn xảy ra ! Thế là coi như add thất bại ! 
 
 Lý giải: đây là một vấn đề về submodule trong Git. 
 
