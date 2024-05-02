@@ -27,3 +27,8 @@ window.onscroll = () =>{
     cartItem.classList.remove('active');
     searchForm.classList.remove('active');
 }
+
+function redirectToRegistration() {
+    // Chuyển hướng người dùng đến trang chứa form đăng ký
+    window.location.href = "index.html";
+}

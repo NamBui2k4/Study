@@ -10,9 +10,9 @@
 </head>
 <body>
 
-    <!-- login section -->
-
-    <a href="login.php">Login</a>
+    <!-- header section -->
+    <header class="header">
+        <!-- other header content -->
 
     <!-- header section -->
     
@@ -20,6 +20,7 @@
         <a href="#" class="logo"> 
             <img src="images/coffee-logo.png" alt="">
         </a>
+
 
          <!-- navbar section -->
         <nav class="navbar">
@@ -40,10 +41,13 @@
     
         </div>
 
-        <div class="search-form">
-            <input type="search" id="search-box" placeholder="search here....">
-            <label for="search-box" class="fas fa-search"></label>
-        </div>
+         <!-- login button -->
+         <a href="index.php" class="btn">Login</a>
+        </header>
+    
+        <!-- other sections -->
+        
+        <?php include 'check_login.php'; ?>
 
         <div class="cart-item-container">
             <div style="height: 400px;
@@ -543,3 +547,4 @@
 <script src="script.js"></script>
 
 </html>
+
