@@ -23,7 +23,8 @@ Nếu bạn muốn biết vị trí cài đặt python, thì bạn có thể s�
 
 hoặc vị trí file : where <tên file>
 
-lưu ý: khi dùng terminal trong vscode, không phải muốn là dùng cd C:\Users\Nam\AppData\Local\Programs\Python\Python311 để tìm đường dẫn của python để chạy file mà phải mở folder mới theo đường dẫn này, vì terminal thực hiện lệnh cd trong folder cũ, nếu không có đường dẫn trong folder cũ thì nó ko tìm dc => lôi
+kiểm tra vị trí của script: python -m site --user-base
+
 
 các hàm: 
    with <câu lệnh> as <biến>  ~ <biến> = <câu lệnh>

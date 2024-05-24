@@ -1,6 +1,10 @@
 # Đồ thị (Graph)
 Trong thực tế, có nhiều đối tượng hoặc thực thể tồn tại dưới dạng các hình học đặc biệt như mạng lưới (ví dụ mạng xã hội, bản đồ, phân tử, mạng thần kinh nơ-ron ,...) mà ta không thể biểu diễn dưới dạng danh sách, cây, hay mảng các đối tượng. Tuy nhiên, ta có thể biểu diễn chúng dưới dạng đồ thị.
-![](/pictures/Application.png)
+
+
+<img width="312" alt="Application" src="https://github.com/PhuongNam2k4/Study/assets/156770604/6a34e8d6-ba18-48c1-9295-5c5b3133fbe3">
+
+Trước khi đi tiếp, tôi muốn nói rằng bài viết này được tôi biên soạn bằng nhiều nguồn kham khảo khác nhau nên có thể sẽ có sai sót. Ngoài ra, tôi cũng sử dụng ngôn ngữ java để chạy chương trình kiểm thử.
 
 ## 1. Đồ thị là gì?
 Graph (đồ thị) là một dạng cấu trúc dữ liệu lưu trữ các đối tượng, trong đó các đối tượng được kết nối với nhau bởi các link. Trong một đồ thị, mỗi đối tượng được biểu diễn bởi một thứ gọi là đỉnh (vertices), và các link mà chúng dùng để kết nối với nhau được gọi là các cạnh (edges).
@@ -28,14 +32,14 @@ __Tính chất__
 Bậc của một đỉnh v trong đồ thị là số cạnh nối với đỉnh đó/ hoặc số láng giềng của nó. Ký hiệuu là $deg(v)$
 
 __Tính chất__
-- Đỉnh có $deg(v) = 0 $ gọi là đỉnh cô lập 
-- Đỉnh có $deg(v) = 1 $ gọi là nút 
+- Đỉnh có $deg(v) = 0$ gọi là đỉnh cô lập 
+- Đỉnh có $deg(v) = 1$ gọi là nút 
 - Đối với đồ thị có hướng, bậc được chia làm 2 loại:
-    * Bậc trong: Số cạnh kết thúc tại đỉnh v, ký hiệu $ deg^{-}(v) $
-    * Bậc ngoài: Số cạnh xuất phát từ đỉnh v, ký hiệu $ deg^{+}(v) $
-- tổng số bậc của đồ thị: $ deg(v) = deg^{-}(v) + deg^{+}(v) $
-- đỉnh chỉ có $ deg^{+}(v) $ là đỉnh phát
-- đỉnh chỉ có $ deg^{-}(v) $ là đỉnh thu
+    * Bậc trong: Số cạnh kết thúc tại đỉnh v, ký hiệu $deg^{-}(v)$
+    * Bậc ngoài: Số cạnh xuất phát từ đỉnh v, ký hiệu $deg^{+}(v)$
+- tổng số bậc của đồ thị: $deg(v) = deg^{-}(v) + deg^{+}(v)$
+- đỉnh chỉ có $deg^{+}(v)$ là đỉnh phát
+- đỉnh chỉ có $deg^{-}(v)$ là đỉnh thu
 
 ![](/pictures/dinh-ke-nhau.png)
 
@@ -126,16 +130,15 @@ __Ma trận kề là gì ?__
 
 __Định nghĩa__
 
-Xét đồ thị G = (V, E) vô hướng hoặc có hướng. Giả sử tập V chứa n đỉnh $ v_1, v_2, v_3,..., v_n $ và tập E chứa m cạnh $ e_1, e_2, e_3,..., e_m $ . Khi đó, ta có thể biểu diễn đồ thị bằng ma trận kề $ a[n][n] $ thỏa điều kiện:
-\[
-\begin{cases}
-    a[i][j] = 0 \text{ nếu không có cạnh nối từ 2 đỉnh } v_i \text{ và } v_j \\
-    a[i][j] = 1 \text{ nếu có cạnh nối từ 2 đỉnh } v_i \text{ và } v_j
-\end{cases}
-\]
+Xét đồ thị G = (V, E) vô hướng hoặc có hướng. Giả sử tập V chứa n đỉnh $v_1, v_2, v_3,..., v_n$ và tập E chứa m cạnh $e_1, e_2, e_3,..., e_m$ . Khi đó, ta có thể biểu diễn đồ thị bằng ma trận kề $a[n][n]$ thỏa điều kiện:
 
 
-Ma trận kề có Space complexity (độ phức tạp không gian) là $ O(V^2) $
+- $a[i][j] = 0$  nếu không có cạnh nối từ 2 đỉnh $v_i$ và  $v_j$
+- $a[i][j] = 1$  nếu có cạnh nối từ 2 đỉnh $v_i$ và $v_j$
+
+
+
+Ma trận kề có Space complexity (độ phức tạp không gian) là $O(V^2)$
 ![](/pictures/AM.png)
 
 __Triển khai ma trận kề__
@@ -146,10 +149,10 @@ Trong lập trình, để triển khai ma trận kề, ta chỉ cần quan tâm 
 
 Cách thực hiện:
 - xác định n đỉnh của một đồ thị
-- Khởi tạo một ma trận a[n] [n] . 
-- duyệt qua từng phần tử a[i] [j] và nhập giá trị cho chúng theo nguyên tắc:
+- Khởi tạo một ma trận $a[n] [n]$ . 
+- duyệt qua từng phần tử $a[i] [j]$ và nhập giá trị cho chúng theo nguyên tắc:
 
-    + Khi đồ thị vô hướng, nếu giữa đỉnh i và đỉnh j có một cạnh thì nhập $ a[i][j] = a[j][i] = 1 $, ngược lại nếu giữa chúng không có cạnh nào thì  $ a[i][j] = a[j][i] = 0 $. 
+    + Khi đồ thị vô hướng, nếu giữa đỉnh i và đỉnh j có một cạnh thì nhập $a[i][j] = a[j][i] = 1$, ngược lại nếu giữa chúng không có cạnh nào thì  $a[i][j] = a[j][i] = 0$. 
     
     VD:
     ```
@@ -163,15 +166,13 @@ Cách thực hiện:
     Minh họa kết quả dưới hình sau:
     ![](/pictures/AM-undirected.jpeg)
 
-    Trong hình trên, vì đồ thị vô hướng, giữa 2 và 0 có một cạnh nên phần tử $ [2][0] = [0][2] = 1 $ . Và ngoài ra, ta nhận thấy tất cả các ô $ [i][j] $ và $ [j][i] $ đều bằng nhau ( ví dụ cặp ô $ [0][1] = [1][0] = 1 $)
+    Trong hình trên, vì đồ thị vô hướng, giữa 2 và 0 có một cạnh nên phần tử $a[2][0] = a[0][2] = 1$ . Và ngoài ra, ta nhận thấy tất cả các ô $a[i][j]$ và $a[j][i]$ đều bằng nhau ( ví dụ cặp $a[0][1] = a[1][0] = 1$)
 
     Từ đây, ta rút ra một tính chất mới:
 
-        Đối với đồ thị vô hướng, các phần tử [i][j]
-         và [j][i] đối xứng với nhau qua đường
-        chéo chính
+        Đối với đồ thị vô hướng, các phần tử ở vị trí [i][j] và [j][i] đối xứng với nhau qua đường chéo chính
  
-    + khi đồ thị có hướng, nếu đỉnh i có cạnh hướng tới đỉnh j thì ta gán $ a[i][j] $ = 1 nhưng ngược lại thì chưa chắc (tức là nếu j __không__ hướng  đến i thì ta gán $ a[j][i] = 0 $)
+    + Khi đồ thị có hướng, nếu đỉnh i có cạnh hướng tới đỉnh j thì ta gán $a[i][j] = 1$ nhưng ngược lại thì chưa chắc (tức là nếu j __không__ hướng  đến i thì ta gán $a[j][i] = 0$)
     
     VD:
 
@@ -184,9 +185,10 @@ Cách thực hiện:
     ```
 
     Minh họa kết quả dưới hình sau:
+
     ![](/pictures/AM-directed.jpeg)
 
-    Có thể thấy, mặc dù giữa 0 và 2 đều có một cạnh nhưng đường đi chỉ có duy nhất từ 0 đến 2 mà không có hướng ngược lại, nghĩa là $ [0][2] = 1 $ còn $ [2][0] = 0 $
+    Có thể thấy, mặc dù giữa 0 và 2 đều có một cạnh nhưng đường đi chỉ có duy nhất từ 0 đến 2 mà không có hướng ngược lại, nghĩa là $a[0][2] = 1$ còn $a[2][0] = 0$
 
 ## 2. Sử dụng Danh sách kề (adjacenct linkedlist)
 
@@ -239,7 +241,7 @@ Tương tự ma trận kề, ta cũng chỉ cần quan tâm đồ thị có bao 
 
 Duyệt quả từng danh sách trong mảng. Tuy nhiên, việc duyệt  có chút khác biệt so với ma trận kề: 
 
-_thay vì duyệt từng phần tử [i] [j], ta sẽ duyệt theo cạnh._
+_Thay vì duyệt từng phần tử [i] [j], ta sẽ duyệt theo cạnh._
 
 Giải thích: _mục đích của danh sách kề là tìm ra các láng giềng của một đỉnh cho trước. Mà theo lý thuyết, đỉnh b được gọi là láng giềng của a nếu giữa chúng có một cạnh. Như vậy, muốn biết một đỉnh có bao nhiều láng giềng thì căn cứ vào số cạnh chứa đỉnh đó. Việc duyệt theo số cạnh sẽ đem lại kết quả chính xác nhất_
 

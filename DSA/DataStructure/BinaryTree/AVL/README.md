@@ -41,19 +41,19 @@ __a. Định nghĩa 1 node:__
 
 __b. Chiều cao của một cây:__
 
-_Lưu ý: có nhiều quan điểm về việc quy ước chiều cao của một cây nhị phân. Người thì cho rằng chiều cao lớn nhất là n - 1 (với n là số node của nhánh cây dài nhất) nhưng cũng có người cho rằng chiều cao lớn nhất của cây là n (nghĩa là nhánh dài nhất có bao nhiêu node thì chiều cao là bấy nhiêu). Đối với một cây nhị phân không có node nào , có người cho rằng cây sẽ có chiều cao là 0, một số khác lại nói rằng chiều cao là -1. Trong bài viết này, ta quy ước chiều cao thấp nhất là 0 và lớn nhất là n_
+_Lưu ý: có nhiều quan điểm về việc quy ước chiều cao của một cây nhị phân. Người thì cho rằng chiều cao là n - 1 (không tính cái gốc của cây) nhưng cũng có người cho rằng chiều cao của cây là n (lấy luôn cả gốc cây). Đối với một cây nhị phân không có node nào , có người cho rằng cây sẽ có chiều cao là 0, một số khác lại nói rằng chiều cao là -1. Trong bài viết này, ta quy ước chiều cao là n_
 
-Chiều cao của một Node chính là số các node trên một đường dẫn dài nhất từ Node đó đến Node = NULL. Và quy ước Node = NULL có chiều cao bằng 0.
+Chiều cao của một cây chính là số các node trên một đường dẫn dài nhất từ gốc đến node NULL. Và quy ước cây không có node nào thì chiều cao là -1.
 
 ![](/pictures/AVL-heigh.png)
 
 Bạn có thể tính độ cao qua hàm đệ quy như cách dưới đây. Tuy nhiên, mình sẽ không áp dụng vào code chính bởi vì khi dữ liệu đầu vào cực lớn thì việc đệ quy để tính chiều cao một Node bằng cách dựa vào tất cả các Node con là rất mất thời gian.
 
 ```
-    int getHeight(Node root) {
+    int height(Node root) {
     	if (root == null)
     		return 0;
-    	return 1 + max( getHeight(root.left) , getHeight(root.right) );
+    	return 1 + max( height(root.left) , height(root.right) );
     }
 ```
 
@@ -61,24 +61,32 @@ __c. Các kỹ thuật quay cây AVL__
 
 1. Kỹ thuật quay phải – áp dụng khi cây bị lệch trái
 
-Có thể thấy cây BST khi không cân bằng sẽ bị lệch sang phía bên trái hoặc bên phải. Để điều chỉnh lại ta cần phải quay cây sang phía ngược lại.
+Có thể thấy cây BST khi không cân bằng sẽ bị lệch sang phía bên trái hoặc bên phải. Để cân bằng cây, ta cần phải quay cây sang phía ngược lại. Phương pháp quay như sau:
 
-Gọi x, y lần lượt là các con trái, phải của root. Bây giờ, ta chỉ cần chú ý đến 3 Node: root, x, x.right.
+Gọi x là con bên trái của root. Ta có:
+
+- root là cha 
+- x là con 
+- x.right là con của x, cháu của root.
 
 ![](/pictures/left-rotate.png)
 
-Con trái của root không còn là x nữa mà là x.right: ``` root.left = x.right```
-X sẽ lên làm cha với con phải là root: ```x.right = root```
-Về chiều cao, có thể thấy chỉ có 2 Node bị thay đổi chiều cao đó là root và x. Vì root là con của x nên phải tính chiều cao của root trước.
--    ```root.height = 1 + max(root.left, root.right)```
--    ```x.height = 1 + max(x.left, x.right)```
+Các bước quay:
+1. Thằng cháu x.right lên chức thay cha của nó:  
+    + root.left = x.right
+3. Ông nội root xuống chức và nhường lại cho đứa con:
+    + x.right = root
+4. Thay đổi chiều cao của cây:
+
+-    root.height = 1 + max(root.left, root.right)
+-    x.height = 1 + max(x.left, x.right)
 
 
 2. Kỹ thuật quay trái – áp dụng khi cây bị lệch phải
 
 ![](/pictures/right-rotate.png)
 
-Hoàn toàn tương tự, gọi x y lần lượt là các con trái phải của root. Và ta chỉ cần quan tâm 3 Node: root, y, y.left
+Tương tự, gọi y là các con phải của root. Và ta chỉ cần quan tâm 3 Node: root, y, y.left
 
 ```
     Node leftRotate(Node root) {
@@ -89,8 +97,8 @@ Hoàn toàn tương tự, gọi x y lần lượt là các con trái phải củ
         y.left = root;
 
         // Thiết lập chiều cao
-        root.height = 1 + max( getHeight(root.left) , getHeight(root.right) );
-        y.height = 1 + max( getHeight(y.left) , getHeight(y.right) );
+        root.height = 1 + max( height(root.left) , height(root.right) );
+        y.height = 1 + max( height(y.left) , height(y.right) );
 
         // trả về root mới
         return y;
