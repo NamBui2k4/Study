@@ -1,4 +1,4 @@
-# Thuật toán Prim
+# Thuật toán Kruskul
 
 __Cây khung nhỏ nhất là gì ?__
 
